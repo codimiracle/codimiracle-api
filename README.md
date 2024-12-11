@@ -8,6 +8,27 @@ For fun, for life, encapsulating strange APIs.
 * codimiracle-api-parent
 
   using for manage api module.
+## API
+### ocr-api
+  Optical Character Recognition API
+### mubu-api
+  Mubu API
+  retrieves mubu document by shareId (or with password).
+```java
+MubuConfig config = new MubuConfig();
+config.setBaseUrl("https://api2.mubu.com/v3");
+MubuDomain mubuDomain = new DefaultMubuDomain(config);
+
+DocumentQuery query = new DocumentQuery();
+query.setShareId("2w3AYxikYlE");
+//or with password
+//query.setPassword("123456");
+Document document = mubuDomain.getDocument(query);
+```
+### douban-api
+  Douban API
+  retrieves douban book by subject id, test only
+
 ## Installation
 ### Manual
   1. clone the repo
